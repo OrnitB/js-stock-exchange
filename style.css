@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+* {
+  font-family: "Open Sans";
+}
+
+body {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchField {
+  width: 100%;
+  border: 3px solid #16464d;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #00b4cc;
+}
+
+.searchButton {
+  width: 80px;
+  height: 36px;
+  border: 1px solid #16464d;
+  background: #16464d;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.loading {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
