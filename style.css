@@ -21,13 +21,8 @@ body {
   flex-direction: column;
 }
 
-.searchField {
-  width: 100%;
-  border: 3px solid #16464d;
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9dbfaf;
+#searchField {
+  margin-right: 1%;
 }
 
 .searchTerm:focus {
@@ -36,14 +31,18 @@ body {
 
 .searchButton {
   width: 80px;
-  height: 36px;
-  border: 1px solid #16464d;
-  background: #16464d;
+  border: 1px solid #9eabad;
+  background: #4c676b;
   text-align: center;
   color: #fff;
-  border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+}
+
+.searchButton span.icon {
+  background: url(imgs/icon.png) no-repeat;
+  float: left;
+  width: 10px;
 }
 
 .loading {
@@ -52,4 +51,9 @@ body {
 
 li {
   list-style: none;
+}
+
+#searchOutput,
+#loading {
+  margin: 3% 0 0 2%;
 }

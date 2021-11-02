@@ -5,7 +5,18 @@ const loading = document.getElementById("loading");
 loading.style.display = "none";
 searchButton.addEventListener("click", tenSearchResults);
 
+document.addEventListener("keyup", function (event) {
+  if (event.code === "Enter") {
+    tenSearchResults();
+  }
+});
+
+function onClickField() {
+  searchField.value = "";
+}
+
 function tenSearchResults() {
+  searchOutput.innerHTML = "";
   const endPoint = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/search?query=${searchField.value}&amp;limit=10&amp;exchange=NASDAQ`;
   loading.style.display = "block";
   fetch(endPoint)
@@ -22,7 +33,7 @@ function tenSearchResults() {
         let singleResultName = singleResult.name;
         let resultInitials = singleResult.symbol;
         let fullSentence = `${singleResultName} (${resultInitials})`;
-        const element = `<li class="searchResultItem h5 fw-normal"><a href="./company.html?symbol=${singleResultName}">${fullSentence}</a></li>`;
+        const element = `<li class="searchResultItem h5 fw-normal"><a href="./company.html?symbol=${resultInitials}">${fullSentence}</a></li>`;
         searchOutput.innerHTML += element;
         loading.style.display = "none";
       }

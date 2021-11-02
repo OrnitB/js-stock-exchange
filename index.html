@@ -12,13 +12,25 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="searchBar">
-        <input type="text" class="searchField" id="searchField" />
-        <button type="submit" class="searchButton" id="searchButton">
-          <i>Search</i>
+      <div class="input-group rounded">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+          id="searchField"
+          onclick="onClickField()"
+        />
+        <button class="btn btn-secondary" type="button" id="searchButton">
+          <i class="fa fa-search"></i>
         </button>
       </div>
       <div class="spinner-grow text-dark" role="status" id="loading">
