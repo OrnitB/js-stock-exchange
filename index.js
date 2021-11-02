@@ -40,14 +40,19 @@ function tenSearchResults() {
             return response.json();
           })
           .then(function (data) {
-            const singleResult = data[`profile`];
-            const logo = singleResult["image"];
-            const logoOutput = `<img src="${logo}">`;
-            const percentageOutput = singleResult["changesPercentage"];
-            const element = `<li class="searchResultItem h5 fw-normal">${logoOutput}<a href="./company.html?symbol=${resultInitials}">${fullSentence}</a><span id="toColor">${percentageOutput}</span></li>`;
+            let singleResult = data[`profile`];
+            let logo = singleResult["image"];
+            let logoOutput = `<img src="${logo}">`;
+            let percentageOutput = singleResult["changesPercentage"];
+            let element;
+            if (percentageOutput < 0) {
+              element = `<li class="searchResultItem h5 fw-normal">${logoOutput}<a href="./company.html?symbol=${resultInitials}">${fullSentence}</a><span style="color: red">${percentageOutput}</span></li>`;
+            } else if (percentageOutput > 0) {
+              element = `<li class="searchResultItem h5 fw-normal">${logoOutput}<a href="./company.html?symbol=${resultInitials}">${fullSentence}</a><span style="color: green">${percentageOutput}</span></li>`;
+            } else {
+              element = `<li class="searchResultItem h5 fw-normal">${logoOutput}<a href="./company.html?symbol=${resultInitials}">${fullSentence}</a><span style="color: black">${percentageOutput}</span></li>`;
+            }
             searchOutput.innerHTML += element;
-            const toColor = document.getElementById("toColor");
-            colorPerc(percentageOutput, toColor);
             loading.style.display = "none";
           });
       }
