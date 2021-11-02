@@ -2,6 +2,7 @@
 
 * {
   font-family: "Open Sans";
+  margin: 3%;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 }
 
 .container {
-  margin: 5%;
+  margin: 3%;
   display: flex;
   flex-direction: column;
 }
@@ -51,9 +52,16 @@ body {
 
 li {
   list-style: none;
+  border-bottom: 1px solid rgb(235, 231, 231);
+  padding-bottom: 10px;
 }
 
 #searchOutput,
 #loading {
   margin: 3% 0 0 2%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
 }
