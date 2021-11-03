@@ -42,7 +42,7 @@ function tenSearchResults() {
           .then(function (data) {
             let singleResult = data[`profile`];
             let logo = singleResult["image"];
-            let logoOutput = `<img src="${logo}">`;
+            let logoOutput = `<img id="searchLogos" src="${logo}">`;
             let percentageOutput = singleResult["changesPercentage"];
             let element;
             if (percentageOutput < 0) {
@@ -68,3 +68,24 @@ function colorPerc(perc, id) {
     id.style.color = "black";
   }
 }
+
+const marqueeText = document.getElementById("marqueeText");
+
+function marqueeGainers() {
+  const gainersAPI =
+    "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers";
+  fetch(gainersAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      marqueeText.innerHTML = "";
+      for (let i = 0; i < data.length; i++) {
+        let ticker = data[i].ticker;
+        let price = data[i].price;
+        let changesPercentage = data[i].changesPercentage;
+        marqueeText.innerHTML += `<span id="gainer">${ticker}  (${price})  <span id="changesPercentage">(${changesPercentage})</span></span>`;
+      }
+    });
+}
+marqueeGainers();

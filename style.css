@@ -65,3 +65,61 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+#searchLogos {
+  height: 7%;
+  width: 7%;
+}
+
+.searchResultItem {
+  margin-left: auto;
+}
+
+#marquee {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  white-space: nowrap;
+}
+
+#marqueeText {
+  display: flex;
+  -moz-animation: marquee 10s linear infinite;
+  -webkit-animation: marquee 10s linear infinite;
+  animation: marquee 10s linear infinite;
+}
+@-moz-keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+#marqueeText:hover {
+  animation-play-state: paused;
+}
+
+#changesPercentage {
+  color: green;
+}
