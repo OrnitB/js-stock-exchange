@@ -84,7 +84,7 @@ function marqueeGainers() {
         let ticker = data[i].ticker;
         let price = data[i].price;
         let changesPercentage = data[i].changesPercentage;
-        marqueeText.innerHTML += `<span id="gainer">${ticker}  (${price})  <span id="changesPercentage">(${changesPercentage})</span></span>`;
+        marqueeText.innerHTML += `<span id="gainer">${ticker} (${price})  <span id="changesPercentage">(${changesPercentage})</span></span>`;
       }
     });
 }

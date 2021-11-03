@@ -2,7 +2,7 @@
 
 * {
   font-family: "Open Sans";
-  margin: 3%;
+  margin: 0.5%;
 }
 
 body {
@@ -79,13 +79,14 @@ h1 {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   white-space: nowrap;
+  height: 50px;
 }
 
 #marqueeText {
   display: flex;
-  -moz-animation: marquee 10s linear infinite;
-  -webkit-animation: marquee 10s linear infinite;
-  animation: marquee 10s linear infinite;
+  -moz-animation: marquee 20s linear infinite;
+  -webkit-animation: marquee linear infinite;
+  animation: marquee 20s linear infinite;
 }
 @-moz-keyframes marquee {
   0% {
@@ -122,4 +123,8 @@ h1 {
 
 #changesPercentage {
   color: green;
+}
+
+#gainer {
+  margin-right: 3%;
 }
