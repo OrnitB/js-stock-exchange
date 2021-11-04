@@ -71,6 +71,7 @@ function colorPerc(perc, id) {
 
 const marqueeText = document.getElementById("marqueeText");
 
+/*
 function marqueeGainers() {
   const gainersAPI =
     "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers";
@@ -89,3 +90,4 @@ function marqueeGainers() {
     });
 }
 marqueeGainers();
+ */

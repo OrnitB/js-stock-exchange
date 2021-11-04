@@ -80,13 +80,14 @@ h1 {
   color: rgb(0, 0, 0);
   white-space: nowrap;
   height: 50px;
+  position: relative;
 }
 
 #marqueeText {
   display: flex;
-  -moz-animation: marquee 20s linear infinite;
-  -webkit-animation: marquee linear infinite;
-  animation: marquee 20s linear infinite;
+  -moz-animation: marquee 10s linear infinite;
+  -webkit-animation: marquee 10s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 @-moz-keyframes marquee {
   0% {
@@ -101,7 +102,7 @@ h1 {
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
 }
 @keyframes marquee {
