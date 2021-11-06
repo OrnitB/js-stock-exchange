@@ -69,8 +69,6 @@ function colorPerc(perc, id) {
   }
 }
 
-const marqueeText = document.getElementById("marqueeText");
-
 /*
 function marqueeGainers() {
   const gainersAPI =

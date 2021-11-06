@@ -2,7 +2,7 @@ class Marquee {
   constructor(div) {
     this.div = div;
   }
-  static marqueeGainers() {
+  marqueeGainers() {
     const gainersAPI =
       "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers";
     fetch(gainersAPI)
@@ -20,6 +20,6 @@ class Marquee {
       });
   }
 }
-
+const marqueeText = document.getElementById("marqueeText");
 const gainers = new Marquee(marqueeText);
-Marquee.marqueeGainers();
+gainers.marqueeGainers();
