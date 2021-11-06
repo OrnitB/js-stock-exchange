@@ -75,15 +75,12 @@ h1 {
   margin-left: auto;
 }
 
-#marquee {
+#marqueeDiv {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   white-space: nowrap;
   height: 50px;
   position: relative;
-}
-
-#marqueeText {
   display: flex;
   -moz-animation: marquee 10s linear infinite;
   -webkit-animation: marquee 10s linear infinite;
@@ -118,7 +115,7 @@ h1 {
   }
 }
 
-#marqueeText:hover {
+#marqueeDiv:hover {
   animation-play-state: paused;
 }
 

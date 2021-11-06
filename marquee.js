@@ -3,23 +3,20 @@ class Marquee {
     this.div = div;
   }
   marqueeGainers() {
-    const gainersAPI =
-      "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers";
-    fetch(gainersAPI)
-      .then(function (response) {
+    fetch(
+      "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers"
+    )
+      .then((response) => {
         return response.json();
       })
-      .then(function (data) {
-        marqueeText.innerHTML = "";
+      .then((data) => {
+        this.div.innerHTML = "";
         for (let i = 0; i < data.length; i++) {
-          let ticker = data[i].ticker;
-          let price = data[i].price;
-          let changesPercentage = data[i].changesPercentage;
-          marqueeText.innerHTML += `<span id="gainer">${ticker} (${price})  <span id="changesPercentage">(${changesPercentage})</span></span>`;
+          this.div.innerHTML += `<span id="gainer">${data[i].ticker} (${data[i].price})  <span id="changesPercentage">(${data[i].changesPercentage})</span></span>`;
         }
       });
   }
 }
-const marqueeText = document.getElementById("marqueeText");
-const gainers = new Marquee(marqueeText);
+const marqueeDiv = document.getElementById("marqueeDiv");
+const gainers = new Marquee(marqueeDiv);
 gainers.marqueeGainers();
