@@ -29,12 +29,12 @@ function companyData() {
       const stockPrice = `<div>Current Stock Price:<strong>${price}</strong>USD</div>`;
       let stockChange;
 
-      if (parseInt(changesPercentage) < 0) {
+      if (parseFloat(changesPercentage) < 0) {
         stockChange = `<span>Change: <span class="text-danger"><strong>${changesPercentage}%</strong></span></span>`;
-      } else if (parseInt(changesPercentage) > 0) {
+      } else if (parseFloat(changesPercentage) > 0) {
         stockChange = `<span>Change: <span class="text-success"><strong>${changesPercentage}%</strong></span></span>`;
       } else {
-        stockChange = `<span>Change: <span class="font-regular"><strong>${changesPercentage}%</strong></span></span>`;
+        stockChange = `<span>Change: <span class="text-regular"><strong>${changesPercentage}%</strong></span></span>`;
       }
 
       container.innerHTML = compLogo;

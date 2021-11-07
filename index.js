@@ -2,7 +2,6 @@ const searchField = document.getElementById("searchField");
 const searchButton = document.getElementById("searchButton");
 const searchOutput = document.getElementById("searchOutput");
 const loading = document.getElementById("loading");
-const container = document.getElementById("container");
 loading.style.display = "none";
 searchButton.addEventListener("click", tenSearchResults);
 
@@ -21,10 +20,10 @@ function tenSearchResults() {
   const endPoint = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/search?query=${searchField.value}&amp;limit=10&amp;exchange=NASDAQ`;
   loading.style.display = "block";
   fetch(endPoint)
-    .then(function (response) {
+    .then((response) => {
       return response.json();
     })
-    .then(function (data) {
+    .then((data) => {
       searchOutput.innerHTML = "";
       for (let i = 0; i < 10; i++) {
         if (typeof data[i] === "undefined") {
@@ -36,10 +35,10 @@ function tenSearchResults() {
         let fullSentence = `${singleResultName} (${resultInitials})`;
         const indexCompanyURL = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${singleResult.symbol}`;
         fetch(indexCompanyURL)
-          .then(function (response) {
+          .then((response) => {
             return response.json();
           })
-          .then(function (data) {
+          .then((data) => {
             let singleResult = data[`profile`];
             let logo = singleResult["image"];
             let logoOutput = `<img id="searchLogos" src="${logo}">`;
@@ -58,34 +57,3 @@ function tenSearchResults() {
       }
     });
 }
-
-function colorPerc(perc, id) {
-  if (perc < 0) {
-    id.style.color = "red";
-  } else if (perc > 0) {
-    id.style.color = "green";
-  } else {
-    id.style.color = "black";
-  }
-}
-
-/*
-function marqueeGainers() {
-  const gainersAPI =
-    "https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/gainers";
-  fetch(gainersAPI)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      marqueeText.innerHTML = "";
-      for (let i = 0; i < data.length; i++) {
-        let ticker = data[i].ticker;
-        let price = data[i].price;
-        let changesPercentage = data[i].changesPercentage;
-        marqueeText.innerHTML += `<span id="gainer">${ticker} (${price})  <span id="changesPercentage">(${changesPercentage})</span></span>`;
-      }
-    });
-}
-marqueeGainers();
- */
