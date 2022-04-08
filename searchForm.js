@@ -15,4 +15,3 @@ class searchForm {
 
 const searchField = document.getElementById("searchField");
 const searchButton = document.getElementById("searchButton");
-const searchush = new searchForm(searchField, searchButton);

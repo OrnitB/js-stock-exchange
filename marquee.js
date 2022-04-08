@@ -18,5 +18,3 @@ class Marquee {
   }
 }
 const marqueeDiv = document.getElementById("marqueeDiv");
-const gainers = new Marquee(marqueeDiv);
-gainers.marqueeGainers();
